@@ -1,5 +1,8 @@
 <?php
-include("conexao.php");
+    session_start();
+if(!isset($_SESSION['logado'])){
+    header("Location: login.php"); exit;
+} include("conexao.php");
 
 $id = $_POST['id'];
 $nome = $_POST['nome'];
